@@ -21,7 +21,7 @@ namespace SummatorTests
 
             var actualSum = Summator.Calculator.Sum(numbersArr);
 
-            Assert.AreEqual(-98, actualSum);
+            Assert.That(actualSum, Is.EqualTo(-98));
         }
 
         [Test]
