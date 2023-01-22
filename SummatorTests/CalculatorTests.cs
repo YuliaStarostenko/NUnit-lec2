@@ -105,5 +105,23 @@ namespace SummatorTests
 
             Assert.AreEqual(99, actualAverageNumber);
         }
+
+        [Test]
+        public void TestAverage_With_Zero()
+        {
+            var numbersArr = new[] { 0 };
+
+            var actualAverageNumber = Summator.Calculator.Average(numbersArr);
+
+            Assert.AreEqual(0, actualAverageNumber);
+        }
+        
+        [Test]
+        public void TestAverage_With_EmptyArray()
+        {
+            int[] numbersArr = new int[] { };
+
+            Assert.That(() => Summator.Calculator.Average(numbersArr), Throws.InstanceOf<DivideByZeroException>());
+        }
     }
 }
